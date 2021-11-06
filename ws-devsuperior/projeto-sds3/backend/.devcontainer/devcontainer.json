@@ -1,0 +1,15 @@
+{
+  "name": "Backend Java SpringBoot",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "runServices": ["app", "dbDev", "pgAdmin"],
+  "workspaceFolder": "/workspace/ws-devsuperior/projeto-sds3/backend",
+  "settings": {
+    "java.home": "/docker-java-home",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "maven.executable.path": "/usr/local/sdkman/candidates/maven/current/bin/mvn"
+  },
+  "extensions": ["vscjava.vscode-java-pack", "pivotal.vscode-boot-dev-pack"],
+  "remoteUser": "vscode",
+  "shutdownAction": "stopCompose"
+}
