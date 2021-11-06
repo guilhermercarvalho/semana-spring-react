@@ -1,0 +1,10 @@
+{
+  "name": "Frontend React",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": { "VARIANT": "14-buster" }
+  },
+  "settings": {},
+  "extensions": ["dbaeumer.vscode-eslint"],
+  "remoteUser": "node"
+}
