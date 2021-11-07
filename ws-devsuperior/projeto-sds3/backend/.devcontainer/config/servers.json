@@ -7,7 +7,7 @@
       "Username": "developer",
       "Host": "dbDev",
       "SSLMode": "prefer",
-      "MaintenanceDB": "development"
+      "MaintenanceDB": "dsvendas"
     }
   }
 }
