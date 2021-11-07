@@ -3,3 +3,4 @@ export { default as Footer } from "./Footer/Footer";
 export { default as DonutChart } from "./DonutChart/DonutChart";
 export { default as DataTable } from "./DataTable/DataTable";
 export { default as BarChart } from "./BarChart/BarChart";
+export { default as Pagination } from "./Pagination/Pagination";
