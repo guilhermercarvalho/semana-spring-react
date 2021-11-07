@@ -7,7 +7,7 @@
     "dbDev",
     "pgAdmin"
   ],
-  "workspaceFolder": "/workspace/ws-devsuperior/projeto-sds3/backend",
+  "workspaceFolder": "/workspace/backend",
   "settings": {
     "java.home": "/docker-java-home",
     "java.configuration.updateBuildConfiguration": "automatic",

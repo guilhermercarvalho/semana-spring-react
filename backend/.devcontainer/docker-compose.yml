@@ -19,7 +19,7 @@ services:
         USER_GID: 1000
     env_file: env/app.env
     volumes:
-      - "/home/guilherme/Documents/projects/git/personal/semana-spring-react.git:/workspace:cached"
+      - "../../:/workspace:cached"
     network_mode: service:dbDev
     command: sleep infinity
     depends_on:
