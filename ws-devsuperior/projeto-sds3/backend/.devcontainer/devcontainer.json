@@ -9,7 +9,11 @@
     "java.configuration.updateBuildConfiguration": "automatic",
     "maven.executable.path": "/usr/local/sdkman/candidates/maven/current/bin/mvn"
   },
-  "extensions": ["vscjava.vscode-java-pack", "pivotal.vscode-boot-dev-pack"],
+  "extensions": [
+	"vscjava.vscode-java-pack",
+	"pivotal.vscode-boot-dev-pack",
+	"editorconfig.editorconfig"
+],
   "remoteUser": "vscode",
   "shutdownAction": "stopCompose"
 }
