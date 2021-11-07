@@ -19,6 +19,7 @@
     "pivotal.vscode-boot-dev-pack",
     "editorconfig.editorconfig"
   ],
+  "postCreateCommand": "sh -c \"curl https://cli-assets.heroku.com/install-ubuntu.sh | sh\"",
   "remoteUser": "vscode",
   "shutdownAction": "stopCompose"
 }
