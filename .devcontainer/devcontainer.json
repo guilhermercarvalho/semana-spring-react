@@ -1,0 +1,30 @@
+{
+  "name": "DS Vendas",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "runServices": [
+    "app",
+    "db"
+  ],
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "16.18.0"
+    },
+    "ghcr.io/devcontainers-contrib/features/heroku-cli": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "pivotal.vscode-boot-dev-pack",
+        "editorconfig.editorconfig",
+        "Gruntfuggly.todo-tree",
+        "dbaeumer.vscode-eslint",
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}
