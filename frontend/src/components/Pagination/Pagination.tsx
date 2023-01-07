@@ -1,4 +1,30 @@
-import { SalePage } from "types/sale";
+import React from "react";
+
+export type Seller = {
+  id: number;
+  name: string;
+};
+
+type Sale = {
+  id: number;
+  visited: number;
+  deals: number;
+  amount: number;
+  date: string;
+  seller: Seller;
+};
+
+type SalePage = {
+  content?: Sale[];
+  last: boolean;
+  totalPages: number;
+  totalElements: number;
+  first: boolean;
+  size?: number;
+  number: number;
+  numberOfElements?: number;
+  empty?: boolean;
+};
 
 type Props = {
   page: SalePage;

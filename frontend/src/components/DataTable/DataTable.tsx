@@ -1,23 +1,26 @@
+import React from "react";
 import axios from "axios";
-import { Pagination } from "components";
 import { useEffect, useState } from "react";
-import { SalePage } from "types/sale";
-import { formatLocalDate } from "utils/format";
-import { BASE_URL } from "utils/requests";
+import { Sale, SalePage } from "../../types/sale";
+import { formatLocalDate } from "../../utils/format";
+import { BASE_URL } from "../../utils/requests";
+import Pagination from "../Pagination/Pagination";
 
 function DataTable() {
   const [activePage, setActivePage] = useState(0);
+  const [sales, setSales] = useState<Sale[] | undefined>(undefined);
   const [page, setPage] = useState<SalePage>({
     first: true,
     last: true,
     number: 0,
     totalElements: 0,
-    totalPages: 0,
+    totalPages: 0
   });
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/sales?page=${activePage}`).then((res) => {
+    axios.get(`${BASE_URL}/sales?page=${activePage}`).then(res => {
       setPage(res.data);
+      setSales(res.data.content);
     });
   }, [activePage]);
 
@@ -40,13 +43,13 @@ function DataTable() {
             </tr>
           </thead>
           <tbody>
-            {page.content?.map((item) => (
-              <tr key={item.id}>
-                <td>{formatLocalDate(item.date, "dd/MM/yyyy")}</td>
-                <td>{item.seller.name}</td>
-                <td>{item.visited}</td>
-                <td>{item.deals}</td>
-                <td>{item.amount.toFixed(2)}</td>
+            {sales?.map((sale) => (
+              <tr key={sale.id}>
+                <td>{formatLocalDate(sale.date, "dd/MM/yyyy")}</td>
+                <td>{sale.seller.name}</td>
+                <td>{sale.visited}</td>
+                <td>{sale.deals}</td>
+                <td>{sale.amount.toFixed(2)}</td>
               </tr>
             ))}
           </tbody>

@@ -1,4 +1,11 @@
-import { Navbar, Footer, DataTable, BarChart, DonutChart } from "components";
+import React from "react";
+import {
+  Navbar,
+  Footer,
+  DataTable,
+  BarChart,
+  DonutChart
+} from "../../components";
 
 function Dashboard() {
   return (

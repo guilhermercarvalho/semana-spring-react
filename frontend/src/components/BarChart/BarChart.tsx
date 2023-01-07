@@ -1,9 +1,10 @@
+import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import { SaleSuccess } from "types/sale";
-import { BASE_URL } from "utils/requests";
-import { round } from "utils/format";
+import { SaleSuccess } from "../../types/sale";
+import { round } from "../../utils/format";
+import { BASE_URL } from "../../utils/requests";
 
 type SeriesData = {
   name: string;
@@ -20,34 +21,34 @@ type ChartData = {
 function Footer() {
   const [chartData, setChartData] = useState<ChartData>({
     labels: {
-      categories: [],
+      categories: []
     },
     series: [
       {
         name: "",
-        data: [],
-      },
-    ],
+        data: []
+      }
+    ]
   });
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/sales/success-by-seller`).then((res) => {
+    axios.get(`${BASE_URL}/sales/success-by-seller`).then(res => {
       const data = res.data as SaleSuccess[];
-      const categories = data.map((el) => el.sellerName);
-      const seriesData = data.map((el) =>
+      const categories = data.map(el => el.sellerName);
+      const seriesData = data.map(el =>
         round(100.0 * (el.deals / el.visited), 1)
       );
 
       setChartData({
         labels: {
-          categories,
+          categories
         },
         series: [
           {
             name: "% Sucesso",
-            data: seriesData,
-          },
-        ],
+            data: seriesData
+          }
+        ]
       });
     });
   }, []);
@@ -55,9 +56,9 @@ function Footer() {
   const options = {
     plotOptions: {
       bar: {
-        horizontal: true,
-      },
-    },
+        horizontal: true
+      }
+    }
   };
 
   return (
